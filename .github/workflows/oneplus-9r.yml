@@ -114,11 +114,11 @@ jobs:
           #SUSFS_BRANCH="gki-${{ inputs.android_version }}-${{ inputs.kernel_version }}"
 
           # Debug print the branches
-          echo "Using branch for SUSFS: gki-android14-4.19"
+          echo "Using branch for SUSFS: gki-kernel-4.19"
 
           # Clone repositories using the branch names
           git clone https://github.com/WildPlusKernel/AnyKernel3.git -b "gki-2.0"
-          git clone https://gitlab.com/simonpunk/susfs4ksu.git -b gki-android14-4.19
+          git clone https://gitlab.com/simonpunk/susfs4ksu.git -b gki-kernel-4.19
           git clone https://github.com/ShirkNeko/SukiSU_patch.git
 
       - name: Set CONFIG Environment Variable
