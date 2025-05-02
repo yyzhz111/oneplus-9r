@@ -111,13 +111,13 @@ jobs:
           echo "Cloning AnyKernel3 and other dependencies..."
 
           # Define the branch names using the inputs values
-          #SUSFS_BRANCH="gki-${{ inputs.android_version }}-${{ inputs.kernel_version }}"
+          #SUSFS_BRANCH="kernel-${{ inputs.android_version }}-${{ inputs.kernel_version }}"
 
           # Debug print the branches
           echo "Using branch for SUSFS: kernel-4.19"
 
           # Clone repositories using the branch names
-          git clone https://github.com/WildPlusKernel/AnyKernel3.git -b "gki-2.0"
+          git clone https://github.com/WildPlusKernel/AnyKernel3.git -b "kernel-2.0"
           git clone https://gitlab.com/simonpunk/susfs4ksu.git -b kernel-4.19
           git clone https://github.com/ShirkNeko/SukiSU_patch.git
 
@@ -222,7 +222,7 @@ jobs:
           echo "Applying SUSFS patches..."
           
           # Copy SUSFS patches
-          cp ../susfs4ksu/kernel_patches/50_add_susfs_in_android-4.19-stable.patch ./common/
+          cp ../susfs4ksu/kernel_patches/50_add_susfs_in_kernel-4.19.patch ./common/
           cp ../susfs4ksu/kernel_patches/fs/* ./common/fs/
           cp ../susfs4ksu/kernel_patches/include/linux/* ./common/include/linux/
 
